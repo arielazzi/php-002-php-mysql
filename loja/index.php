@@ -11,6 +11,11 @@ if (isset($_GET['login']) && $_GET['login'] == true):
 
 <?php endif ?>
 
+<?php if (isset($_GET['falhaDeSeguranca'])): ?>
+<p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
+
+<?php endif ?>
+
 <h1>Bem vindo!</h1>
 <?php if (isset($_COOKIE['usuario_logado'])): ?>
 	<p class="text-success">Você está logado como <?=$_COOKIE['usuario_logado']?></p>
