@@ -8,9 +8,14 @@ if (isset($_GET['login']) && $_GET['login'] == true):
 
 <?php if (isset($_GET['login']) && $_GET['login'] == false): ?>
 <p class="alert-danger">Usuário ou senha invalida!</p>
+
 <?php endif ?>
 
-    <h1>Bem vindo!</h1>
+<h1>Bem vindo!</h1>
+<?php if (isset($_COOKIE['usuario_logado'])): ?>
+	<p class="text-success">Você está logado como <?=$_COOKIE['usuario_logado']?></p>
+<?php else: ?>
+
     <h2>Login</h2>
     <form action="login.php" method="post">
     	<table class="table">
@@ -27,4 +32,5 @@ if (isset($_GET['login']) && $_GET['login'] == true):
     		</tr>
     	</table>
     </form>
+<?php endif ?>
 <?php include("rodape.php"); ?>
